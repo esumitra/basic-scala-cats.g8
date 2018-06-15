@@ -6,7 +6,9 @@ A basic scala template for use with SBT. It provides the following features.
  - Cats library for functional programming
  - Specs2 test example
  - ScalaCheck test example
-
+ - Scalatest test example
+ - Cats law testing example
+ 
 The project requires Java 8, Scala 2.12.1 and sbt 0.13.16 environment to run.
 
 ### Creating a new project
@@ -16,6 +18,10 @@ Run the command below and enter the properties for your project
 
 cd into your project directory to run SBT commands
 
+To create the scalatest project with cats law testing example, create the project using
+
+`sbt new esumitra/basic-scala-cats.g8 -b scalatest`
+g
 ### Getting started
  Use the following commands to get started with your project
 
