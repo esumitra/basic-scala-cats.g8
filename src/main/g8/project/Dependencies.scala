@@ -1,9 +1,12 @@
 import sbt._
 
 object Dependencies {
-  lazy val scalaSpecs = Seq(
-    "org.specs2" %% "specs2-core" % "4.0.0" % "test",
-    "org.specs2" %% "specs2-scalacheck" % "4.0.0" % "test"
+  lazy val scalaTest = Seq(
+    "org.scalatest" %% "scalatest" % "3.0.5" % Test,
+    // for law testing cats based typeclasses
+    "org.typelevel" %% "cats-laws" % "1.0.1" % Test,
+    "org.typelevel" %% "cats-testkit" % "1.0.1"% Test,
+    "com.github.alexarchambault" %% "scalacheck-shapeless_1.13" % "1.1.6" % Test
   )
 
   val circeVersion = "0.9.1"

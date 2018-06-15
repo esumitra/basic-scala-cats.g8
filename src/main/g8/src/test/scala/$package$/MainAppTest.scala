@@ -3,14 +3,16 @@
   */
 
 package $package$
-import org.specs2._
+import org.scalatest.FlatSpec
 
-class HelloSpec extends Specification { def is = s2"""
- The string greeting should
-   contain at least 5 characters  \$e1
-   start with 'hello'           \$e2"""
+class FirstSpec extends FlatSpec {
+  "An empty set" should "have size 0" in {
+    assert(Set.empty.size == 0)
+  }
 
-  val greeting = MainApp.hello("test")
-  def e1 = greeting must have size(beGreaterThan(5))
-  def e2 = greeting must startWith("Hello")
+  it should "produce NoSuchElementException for head" in {
+    assertThrows[NoSuchElementException] {
+      Set.empty.head
+    }
+  }
 }

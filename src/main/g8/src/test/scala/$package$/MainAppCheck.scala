@@ -1,21 +1,21 @@
 /**
-  * scala checks for simple app
+  * scala cats law testing for simple app
   */
 
 package $package$
-import org.specs2._
-import org.scalacheck._
 
-class HelloCheck extends Specification with ScalaCheck { def is = s2"""
- The greeting function should
-   contain the input string   \$e1
-   start with 'hello'         \$e2"""
+import cats._
+import cats.implicits._
+import cats.tests.CatsSuite
+import cats.laws.discipline.FunctorTests
+import cats.kernel.laws.discipline.MonoidTests
 
-  def e1 = prop {(input: String) =>
-    MainApp.hello(input) must contain(input)
-  }
-  def e2 = prop {(input: String) =>
-    MainApp.hello(input) must startWith("Hello")
-  }
-
+class FunctorLawsTests extends CatsSuite {
+  checkAll("Option.FunctorLaws", FunctorTests[Option].functor[Int, Int, Int])
 }
+
+class IntMonoidLawsTest extends CatsSuite {
+  checkAll("Int.MonoidLaws", MonoidTests[Int].monoid)
+}
+
+
