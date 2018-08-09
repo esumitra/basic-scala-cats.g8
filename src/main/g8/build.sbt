@@ -6,6 +6,7 @@ lazy val root = (project in file(".")).
       scalaVersion := "2.12.1"
     )),
     name := "$name$",
+    scalacOptions += "-Ypartial-unification",
     libraryDependencies ++= Dependencies.core ++ Dependencies.scalaSpecs,
     mainClass in assembly := Some("$package$.MainApp"),
     assemblyJarName in assembly := "$name$.jar",
