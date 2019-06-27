@@ -9,14 +9,17 @@ object Dependencies {
     "com.github.alexarchambault" %% "scalacheck-shapeless_1.13" % "1.1.6" % Test
   )
 
-  val circeVersion = "0.9.1"
+  val circeVersion = "0.11.0"
   lazy val core = Seq(
+    // cats FP libary
     "org.typelevel" %% "cats-core" % "1.0.1",
     "org.typelevel" %% "mouse" % "0.16",
-    "com.typesafe" % "config" % "1.3.1",
+
+    // support for JSON formats
     "io.circe" %% "circe-core" % circeVersion,
     "io.circe" %% "circe-generic" % circeVersion,
-    "io.circe" %% "circe-parser" % circeVersion,
-    "io.circe" %% "circe-config" % "0.4.1"
+
+    // support for typesafe configuration
+    "com.github.pureconfig" %% "pureconfig" % "0.10.1"
   )
 }
