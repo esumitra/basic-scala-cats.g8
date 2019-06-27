@@ -9,7 +9,7 @@ A basic scala template for use with SBT. It provides the following features.
  - Scalatest test example
  - Cats law testing example
 
-The project requires Java 8, Scala 2.12.1 and sbt 0.13.16 environment to run.
+The project requires Java 8, Scala 2.12.8 and sbt 1.2.8 environment to run.
 
 ### Creating a new project
 Run the command below and enter the properties for your project
