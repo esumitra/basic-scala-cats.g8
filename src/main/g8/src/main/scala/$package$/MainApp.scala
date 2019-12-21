@@ -6,8 +6,9 @@ package $package$
 
 import $package$.config.{ConfigUtils, CookieSettings}
 import pureconfig.generic.auto._
+import com.typesafe.scalalogging.{LazyLogging}
 
-object MainApp {
+object MainApp extends LazyLogging {
 
   val COOKIE_CONFIG_PATH="$package$.cookie"
 
@@ -15,7 +16,8 @@ object MainApp {
 
   def main(args: Array[String]): Unit = {
     val cookie = ConfigUtils.loadAppConfig[CookieSettings](COOKIE_CONFIG_PATH)
-    println(s"running application version with ttl: \${cookie.ttl}")
+    logger.info(s"running application version with ttl: \${cookie.ttl}")
+
     val message = args.length match {
       case 0 => hello("Anonymous")
       case _ => hello(args(0))
