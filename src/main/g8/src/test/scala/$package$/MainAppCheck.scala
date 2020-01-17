@@ -6,16 +6,17 @@ package $package$
 
 import cats._
 import cats.implicits._
-import cats.tests.CatsSuite
-import cats.laws.discipline.FunctorTests
-import cats.kernel.laws.discipline.MonoidTests
+import org.scalatest.{ WordSpec, BeforeAndAfterAll, Matchers }
 
-class FunctorLawsTests extends CatsSuite {
-  checkAll("Option.FunctorLaws", FunctorTests[Option].functor[Int, Int, Int])
+// no cats checking; simple unit test example instead
+final class SimpleCatsTypeclassTest
+    extends WordSpec
+    with Matchers
+    with BeforeAndAfterAll {
+
+  "Monoid for List" should {
+    "sum integers with combineAll" in {
+      Monoid.combineAll(List(1, 2, 3)) shouldBe 6
+    }
+  }
 }
-
-class IntMonoidLawsTest extends CatsSuite {
-  checkAll("Int.MonoidLaws", MonoidTests[Int].monoid)
-}
-
-
