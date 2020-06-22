@@ -8,8 +8,9 @@ A basic scala template for use with SBT. It provides the following features.
  - ScalaCheck test example
  - Scalatest test example
  - Cats law testing example
+ - JSON encoding with circe
 
-The project requires Java 8, Scala 2.12.8 and sbt 1.2.8 environment to run.
+The project requires Java 8 or Java 11, Scala 2.12.8 and sbt 1.3.6+ environment to run.
 
 ### Creating a new project
 Run the command below and enter the properties for your project
@@ -29,7 +30,31 @@ To create the scalatest project with cats law testing example, create the projec
  - Create a "fat" jar: `sbt assembly`
  - Run tests: `sbt test`
 
+### Static Analysis Tools
+
+#### Scalafmt
+To ensure clean code, run scalafmt periodically. The scalafmt configuration is defined at https://scalameta.org/scalafmt/docs/configuration.html
+
+For source files,
+
+`sbt scalafmt`
+
+For test files.
+
+`sbt test:scalafmt`
+
+#### Scalafix
+To ensure clean code, run scalafix periodically. The scalafix rules are listed at https://scalacenter.github.io/scalafix/docs/rules/overview.html
+
+For source files,
+
+`sbt "scalafix RemoveUnused"`
+
+For test files.
+
+`sbt "test:scalafix RemoveUnused"`
+
 ### License
-Copyright 2018, Edward Sumitra
+Copyright 2020, Edward Sumitra
 
 Licensed under the Apache License, Version 2.0.
