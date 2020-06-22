@@ -3,7 +3,9 @@ lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
       organization := "$package$",
-      scalaVersion := "2.12.8"
+      scalaVersion := "2.12.10",
+      semanticdbEnabled := true, // enable SemanticDB
+      semanticdbVersion := scalafixSemanticdb.revision // use Scalafix compatible version
     )),
     name := "$name$",
     scalacOptions ++= Seq(
@@ -11,6 +13,7 @@ lazy val root = (project in file(".")).
       "-deprecation",
       "-unchecked",
       "-language:postfixOps",
+      "-Ywarn-unused-import",
       "-language:higherKinds", // HKT required for Monads and other HKT types
       "-Ypartial-unification" // PU required for better type inference
     ),
