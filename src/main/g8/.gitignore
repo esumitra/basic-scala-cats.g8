@@ -24,3 +24,8 @@ project/plugins/project/
 
 #idea
 .idea
+
+# VSC
+.bloop
+.metals
+.vscode
