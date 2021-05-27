@@ -10,7 +10,7 @@ A basic scala template for use with SBT. It provides the following features.
  - Cats law testing example
  - JSON encoding with circe
 
-The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.3.6+ environment to run.
+The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.5.2+ environment to run.
 
 ### Creating a new project
 Run the command below and enter the properties for your project
@@ -29,7 +29,8 @@ To create the scalatest project with cats law testing example, create the projec
  - Compile: `sbt compile`
  - Create a "fat" jar: `sbt assembly`
  - Run tests: `sbt test`
-
+- To install in local repo: `sbt publishLocal`
+ 
 ### Static Analysis Tools
 
 #### Scalafmt
