@@ -2,7 +2,7 @@
 This project ...
 
 
-The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.3.6+ environment to run.
+The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.5.2+ environment to run.
 
 ### Getting started
  Use the following commands to get started with your project
@@ -10,7 +10,8 @@ The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.3.6+ environment
  - Compile: `sbt compile`
  - Create a "fat" jar: `sbt assembly`
  - Run tests: `sbt test`
-
+ - To install in local repo: `sbt publishLocal`
+ 
 ### Static Analysis Tools
 
 #### Scalafmt

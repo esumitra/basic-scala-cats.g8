@@ -24,6 +24,7 @@ lazy val root = (project in file(".")).
     // ignore lib refs in jars
     assemblyMergeStrategy in assembly := {
       case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+      case "application.conf"            => MergeStrategy.concat
       case x =>
         val oldStrategy = (assemblyMergeStrategy in assembly).value
         oldStrategy(x)
