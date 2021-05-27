@@ -1,12 +1,12 @@
 import Dependencies._
+
+ThisBuild / organization := "$package$"
+ThisBuild / scalaVersion := "2.12.12"
+ThisBuild / semanticdbEnabled := true // enable SemanticDB
+ThisBuild / semanticdbVersion := scalafixSemanticdb.revision // use Scalafix compatible version
+
 lazy val root = (project in file(".")).
   settings(
-    inThisBuild(List(
-      organization := "$package$",
-      scalaVersion := "2.12.12",
-      semanticdbEnabled := true, // enable SemanticDB
-      semanticdbVersion := scalafixSemanticdb.revision // use Scalafix compatible version
-    )),
     name := "$name$",
     scalacOptions ++= Seq(
       "-feature",
@@ -18,15 +18,14 @@ lazy val root = (project in file(".")).
       "-Ypartial-unification" // PU required for better type inference
     ),
     libraryDependencies ++= Dependencies.core ++ Dependencies.scalaTest,
-    mainClass in assembly := Some("$package$.MainApp"),
-    assemblyJarName in assembly := "$name$.jar",
-    test in assembly := {},
-    // ignore lib refs in jars
-    assemblyMergeStrategy in assembly := {
+    assembly / mainClass := Some("$package$.MainApp"),
+    assembly / assemblyJarName := "$name$.jar",
+    assembly / test := {},
+    assembly / assemblyMergeStrategy := {
       case PathList("META-INF", xs @ _*) => MergeStrategy.discard
       case "application.conf"            => MergeStrategy.concat
       case x =>
-        val oldStrategy = (assemblyMergeStrategy in assembly).value
+        val oldStrategy = (assembly / assemblyMergeStrategy).value
         oldStrategy(x)
     }
   )
