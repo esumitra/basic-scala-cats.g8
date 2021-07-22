@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$package$"
-ThisBuild / scalaVersion := "2.12.12"
+ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / semanticdbEnabled := true // enable SemanticDB
 ThisBuild / semanticdbVersion := scalafixSemanticdb.revision // use Scalafix compatible version
 
@@ -13,9 +13,8 @@ lazy val root = (project in file(".")).
       "-deprecation",
       "-unchecked",
       "-language:postfixOps",
-      "-Ywarn-unused-import",
       "-language:higherKinds", // HKT required for Monads and other HKT types
-      "-Ypartial-unification" // PU required for better type inference
+      "-Wunused", // for scalafix
     ),
     libraryDependencies ++= Dependencies.core ++ Dependencies.scalaTest,
     assembly / mainClass := Some("$package$.MainApp"),

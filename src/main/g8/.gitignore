@@ -30,4 +30,9 @@ project/plugins/project/
 .metals
 .vscode
 .bsp
+**/metals.sbt
+
+# OSX
+.DS_Store
+
 

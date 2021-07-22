@@ -2,7 +2,7 @@
 This project ...
 
 
-The project requires Java 8 or Java 11, Scala 2.12.12 and sbt 1.5.2+ environment to run.
+The project requires Java 8 or Java 11, Scala 2.13 and sbt 1.5.2+ environment to run.
 
 ### Getting started
  Use the following commands to get started with your project

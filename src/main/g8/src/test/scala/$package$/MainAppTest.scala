@@ -3,9 +3,9 @@
   */
 
 package $package$
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FirstSpec extends FlatSpec {
+class FirstSpec extends AnyFlatSpec {
   "An empty set" should "have size 0" in {
     assert(Set.empty.size == 0)
   }
