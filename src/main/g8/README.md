@@ -1,5 +1,5 @@
 ## $name$
-This project ...
+$project_description$
 
 
 The project requires Java 8 or Java 11, Scala 2.13 and sbt 1.5.2+ environment to run.
@@ -37,6 +37,6 @@ For test files.
 `sbt "test:scalafix RemoveUnused"`
 
 ### License
-Copyright <year>, <author>
+Copyright $copyrightyear$, $organization$
 
-Licensed under the Apache License, Version 2.0.
+Licensed under the MIT License.
