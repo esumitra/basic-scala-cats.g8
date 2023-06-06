@@ -9,9 +9,9 @@ object Dependencies {
     "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0" % Test
   )
 
-  val circeVersion = "0.13.0"
-  val pureconfigVersion = "0.15.0"
-  val catsVersion = "2.2.0"
+  val circeVersion = "0.14.1"
+  val pureconfigVersion = "0.17.4"
+  val catsVersion = "2.9.0"
 
   lazy val core = Seq(
     // cats FP libary
