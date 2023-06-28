@@ -55,6 +55,26 @@ For test files.
 
 `sbt "test:scalafix RemoveUnused"`
 
+### Testing templates
+Test locally using giter8
+
+1. Install giter8 from https://www.foundweekends.org/giter8/setup.html
+e.g.,
+```
+curl https://repo1.maven.org/maven2/org/foundweekends/giter8/giter8-bootstrap_2.12/0.16.2/giter8-bootstrap_2.12-0.16.2.sh > ~/tools/g8
+
+chmod +x ~/tools/g8
+```
+
+2. Create project from local template
+e.g., 
+```
+~/tools/g8 file://Users/ESumitra/workspaces/scala/basic-scala-cats.g8 --name=simpleapp --force
+
+cd simpleapp && sbt test
+```
+
+
 ### License
 Copyright 2023, Edward Sumitra
 

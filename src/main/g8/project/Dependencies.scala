@@ -2,7 +2,8 @@ import sbt._
 
 object Dependencies {
   lazy val scalaTest = Seq(
-    "org.scalatest" %% "scalatest" % "3.0.8" % Test,
+    "org.scalatest" %% "scalatest" % "3.2.13" % Test,
+    "org.scalatestplus" %% "scalacheck-1-15" % "3.2.9.0" % Test,
     // for law testing cats based typeclasses
     "org.typelevel" %% "cats-laws" % "2.0.0" % Test,
     "org.typelevel" %% "cats-testkit-scalatest" % "2.1.5"% Test,
